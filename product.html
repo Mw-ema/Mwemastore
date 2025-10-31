@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MuemaStore | Product</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">MuemaStore</a>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#products">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="cart" href="cart.html">🛒 <span id="cartCount">0</span></a>
+  </header>
+
+  <main class="product-page">
+    <div class="product-wrap glass">
+      <div class="product-media" id="productImages">
+        <!-- main image inserted by JS -->
+      </div>
+
+      <div class="product-details">
+        <h1 id="prodTitle">Product Title</h1>
+        <p class="sku" id="prodSku">SKU: --</p>
+        <div class="price" id="prodPrice">KES 0.00</div>
+        <p id="prodDesc">Product description...</p>
+
+        <div class="product-actions">
+          <label>
+            Qty:
+            <input id="qtyInput" type="number" min="1" value="1" />
+          </label>
+          <button id="addToCartBtn" class="add-btn">Add to Cart</button>
+          <a id="buyNowBtn" class="btn-primary" href="checkout.html">Buy Now</a>
+        </div>
+
+        <div class="product-meta">
+          <p><strong>Category:</strong> <span id="prodCat">--</span></p>
+          <p><strong>Delivery:</strong> Expect delivery in 2–5 business days</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer glass">
+    <div class="footer-content">
+      <h2>MuemaStore</h2>
+      <p>Your friendly online marketplace — shop smart, shop purple.</p>
+      <p>&copy; 2025 MuemaStore</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // onload product page: render details
+    document.addEventListener('DOMContentLoaded', () => {
+      const id = new URLSearchParams(location.search).get('id') || '1';
+      displayProductDetails(parseInt(id, 10));
+      // wire up buy now to include product id and qty
+      document.getElementById('buyNowBtn').addEventListener('click', (e) => {
+        // ensure qty is applied when proceeding to checkout: store a special 'checkout_item'
+        const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+        const pid = parseInt(id, 10);
+        saveCheckoutItem(pid, qty); // function in script.js
+      });
+    });
+  </script>
+</body>
+</html>

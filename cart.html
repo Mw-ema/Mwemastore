@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MuemaStore | Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">MuemaStore</a>
+    <input type="text" id="searchInput" placeholder="Search products..." />
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#products">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="cart" href="cart.html">🛒 <span id="cartCount">0</span></a>
+  </header>
+
+  <main class="cart-page">
+    <div class="cart-wrap glass">
+      <h1>Your Cart</h1>
+      <div id="cartItems">
+        <!-- JS injects cart items here -->
+      </div>
+
+      <div class="cart-summary" id="cartSummary">
+        <!-- totals injected here -->
+      </div>
+
+      <div class="cart-actions">
+        <a href="index.html" class="btn-secondary">Continue Shopping</a>
+        <a id="proceedBtn" href="checkout.html" class="btn-primary">Proceed to Checkout</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer glass">
+    <div class="footer-content">
+      <h2>MuemaStore</h2>
+      <p>Your friendly online marketplace — shop smart, shop purple.</p>
+      <p>&copy; 2025 MuemaStore</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCartPage();
+    });
+  </script>
+</body>
+</html>
