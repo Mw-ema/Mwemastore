@@ -1,61 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MuemaStore | Home</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <a class="logo" href="index.html">MuemaStore</a>
-    <input type="text" id="searchInput" placeholder="Search products..." />
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#products">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a class="cart" href="cart.html">🛒 <span id="cartCount">0</span></a>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content glass">
-      <h1>Shop the Best Deals in Town</h1>
-      <p>Quality items, secure payments, and fast delivery — all wrapped in purple.</p>
-      <a class="btn-primary" href="index.html#products">Shop Now</a>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
-  <section class="categories">
-    <button class="category active" data-category="All">All</button>
-    <button class="category" data-category="Electronics">Electronics</button>
-    <button class="category" data-category="Fashion">Fashion</button>
-    <button class="category" data-category="Home">Home</button>
-    <button class="category" data-category="Beauty">Beauty</button>
-    <button class="category" data-category="Toys">Toys</button>
-  </section>
-
-  <!-- PRODUCTS GRID -->
-  <section class="products" id="products">
-    <!-- JS injects items here -->
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer glass">
-    <div class="footer-content">
-      <h2>MuemaStore</h2>
-      <p>Your friendly online marketplace — shop smart, shop purple.</p>
-      <div class="footer-links">
-        <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="cart.html">Cart</a>
-      </div>
-      <p>&copy; 2025 MuemaStore</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artisan Furniture Co.</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
